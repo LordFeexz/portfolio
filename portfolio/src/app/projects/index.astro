@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets";
+import Header from "./header.astro";
+import Hackpark from "./content/hackpark.astro";
+---
+
+<section class="relative pt-16 lg:pt-32 xl:pt-36 2xl:pt-[11rem]" id="projects">
+  <Image
+    src="/mesh.png"
+    alt=""
+    format="webp"
+    id="mesh-project-section-top"
+    loading="lazy"
+    width="1400"
+    height="1089"
+    style="opacity: 0;"
+    class="aspect-auto absolute top-[-150px] right-0 hidden min-w-[554px] sm:top-[-150px] sm:left-[550px] sm:block lg:min-w-[1400px]"
+  />
+
+  <Header />
+
+  <div class="mt-20 px-0 sm:px-8 md:px-12 lg:mt-24 xl:mt-32">
+    <Hackpark />
+  </div>
+
+  <div class="relative">
+    <Image
+      format="webp"
+      id="mesh-project-section-bottom"
+      loading="lazy"
+      src="/mesh.png"
+      alt=""
+      width="1400"
+      height="1089"
+      style="opacity: 0;"
+      class="aspect-auto absolute top-[-700px] left-[-250px] hidden w-auto sm:block sm:min-h-[1400px]"
+    />
+  </div>
+
+  <script>
+    import {
+      animate,
+      glide,
+      inView,
+    } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+
+    const defaultEasing = [0.17, 0.55, 0.55, 1];
+
+    ["forumGamers", "hackpark"].forEach((project) => {
+      inView(`#project-${project}`, () => {
+        animate(
+          `#project-${project}`,
+          { transform: "rotateX(0)" },
+          { duration: 0.7, easing: defaultEasing }
+        );
+        animate(
+          `.project-slider-item-${project}`,
+          { x: 0 },
+          { duration: 1, easing: glide({ velocity: -500, max: 10, min: -10 }) }
+        );
+      });
+    });
+  </script>
+</section>
+
+<style>
+  .overlay-hackpark {
+    background: radial-gradient(
+        136.64% 61.58% at 89.55% 104.49%,
+        rgba(225, 29, 72, 0.17) 0%,
+        rgba(255, 241, 242, 0) 100%
+      ),
+      radial-gradient(
+        21.08% 15.61% at 21.46% 19.85%,
+        rgba(225, 29, 72, 0.1) 0%,
+        rgba(255, 241, 242, 0) 100%
+      );
+  }
+
+  @media (max-width: 1268px) {
+    .overlay-hackpark {
+      background: radial-gradient(
+          136.64% 61.58% at 89.55% 104.49%,
+          rgba(225, 29, 72, 0.17) 0%,
+          rgba(255, 241, 242, 0) 100%
+        ),
+        radial-gradient(
+          21.08% 15.61% at 21.46% 19.85%,
+          rgba(225, 29, 72, 0.45) 0%,
+          rgba(255, 241, 242, 0) 100%
+        );
+    }
+  }
+</style>

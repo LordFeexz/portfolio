@@ -38,35 +38,36 @@ const { title } = Astro.props;
         </noscript>
       )
     }
-  </body><style is:global>
-    html {
-      background-color: #f6f6f6;
-      min-height: 100vh;
-      /* scroll-behavior: smooth; */
-    }
-    body {
-      min-height: 100vh;
-    }
-    strong {
-      @apply font-semibold;
-    }
-    .navbar-background-light {
-      background: linear-gradient(
-        180deg,
-        rgba(9, 130, 163, 0.55) -8.75%,
-        rgba(9, 130, 163, 0) 100%
-      );
-    }
-    .navbar-background-dark {
-      background: linear-gradient(
-        180deg,
-        rgba(5, 31, 46, 1) -8.75%,
-        rgba(9, 130, 163, 0) 100%
-      );
-    }
-    .no-text-fill-color {
-      -webkit-text-fill-color: initial;
-      text-fill-color: initial;
-    }
-  </style>
+    <style is:global>
+      html {
+        background-color: #f6f6f6;
+        min-height: 100vh;
+        /* scroll-behavior: smooth; */
+      }
+      body {
+        min-height: 100vh;
+      }
+      strong {
+        @apply font-semibold;
+      }
+      .navbar-background-light {
+        background: linear-gradient(
+          180deg,
+          rgba(9, 130, 163, 0.55) -8.75%,
+          rgba(9, 130, 163, 0) 100%
+        );
+      }
+      .navbar-background-dark {
+        background: linear-gradient(
+          180deg,
+          rgba(5, 31, 46, 1) -8.75%,
+          rgba(9, 130, 163, 0) 100%
+        );
+      }
+      .no-text-fill-color {
+        -webkit-text-fill-color: initial;
+        text-fill-color: initial;
+      }
+    </style>
+  </body>
 </html>

@@ -1,0 +1,191 @@
+---
+import { Image } from "astro:assets";
+import HackparkIcon from "../icons/hackparkIcon.astro";
+import Mongo from "../icons/mongo.astro";
+import Pg from "../icons/pg.astro";
+import Graphql from "../icons/graphql.astro";
+import React from "../icons/react.astro";
+import Express from "../icons/express.astro";
+import Slider from "../slider.astro";
+import Github from "../icons/github.astro";
+import Heroku from "../icons/heroku.astro";
+import Redis from "../icons/redis.astro";
+---
+
+<article
+  style={{ transform: "perspective(75em) rotateX(18deg)" }}
+  id="project-hackpark"
+  class="relative z-10 mx-auto max-w-[1244px] overflow-hidden py-20 sm:rounded-3xl">
+  <!--  -->
+  <Image
+    format="webp"
+    src="/project-ournament-lines.png"
+    width="1000"
+    height="1000"
+    loading="lazy"
+    alt=""
+    class="pointer-events-none absolute left-0 top-0 z-0 min-w-[600px] sm:min-w-[1000px]"
+  />
+
+  <Image
+    format="webp"
+    src="/project-ournament-lines-btm.png"
+    loading="lazy"
+    width="1000"
+    height="1000"
+    alt=""
+    class="pointer-events-none absolute right-0 bottom-0 z-0 min-w-[500px] sm:min-w-[1000px]"
+  />
+
+  <div class="relative z-10 px-5 sm:px-10 lg:px-16">
+    <h3 class="sr-only">Hackpark</h3>
+    <HackparkIcon />
+    <h4 class="sr-only">About</h4>
+    <p class="mt-10 text-lg !leading-150 text-dark sm:text-2xl">
+      <span class="font-semibold">Introducing</span> A solution for driver that
+      didn’t want hassling around with finding parking slot without any
+      certainty.
+    </p>
+  </div>
+
+  <div class="portfolio-images">
+    <Slider
+      name="hackpark"
+      images={[
+        { src: "/hackpark/HackPark.png", alt: "flow app" },
+        { src: "/hackpark/timeline.png", alt: "timeline" },
+        { src: "/hackpark/testing.png", alt: "testing" },
+        { src: "/hackpark/desc.png", alt: "description" },
+        { src: "/hackpark/challange.png", alt: "challange" },
+        { src: "/hackpark/success-story.png", alt: "success-story" },
+      ]}
+    />
+  </div>
+
+  <div class="relative z-10 px-5 sm:px-10 lg:px-16">
+    <p class="text-lg !leading-150 text-dark sm:text-2xl">
+      Hackpark will help you to book that parking slot and pay the parking fee
+      simply with scan <span class="font-semibold">QR Code</span>.
+    </p>
+    <br />
+
+    <div class="flex items-start space-x-4 pl-5 sm:space-x-10 sm:pl-8">
+      <a
+        target="_blank"
+        class="font-semibold leading-6 tracking-tight"
+        href="https://github.com/LordFeexz/Hackpark">
+        <span
+          class="block text-xl leading-4 text-dark sm:text-[32px] sm:!leading-100"
+          >hackpark</span
+        >
+        <span
+          class="inline-flex space-x-[6px] text-sm text-slate-700 sm:pt-2 sm:text-xl">
+          <span>on</span>
+          <span><Github /></span>
+          <span>github.com</span>
+        </span>
+      </a>
+    </div>
+
+    <div class="mt-20">
+      <h4 class="text-2xl font-semibold leading-140 text-dark sm:text-[32px]">
+        Featured technologies used
+      </h4>
+      <div class="mt-6 -ml-2 flex flex-wrap gap-3 sm:ml-0">
+        {
+          [
+            <Mongo />,
+            <Pg />,
+            <Graphql />,
+            <React />,
+            <Express />,
+            <Redis />,
+            <Heroku />,
+          ].map((icon) => (
+            <div class="-ml-2 w-20 scale-[90%] sm:ml-0 sm:min-h-[100px] sm:min-w-[100px] sm:scale-100">
+              {icon}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-14"></div>
+  </div>
+</article>
+
+<style>
+  article {
+    background: linear-gradient(
+        146.63deg,
+        rgba(2, 132, 199, 0.1) 1.32%,
+        rgba(236, 254, 255, 0) 66%
+      ),
+      linear-gradient(
+        325.76deg,
+        rgba(2, 132, 199, 0.2) 3.68%,
+        rgba(236, 254, 255, 0) 66.89%
+      ),
+      #ffffff;
+    box-shadow: "15px24px17pxrgba(0,0,0,0.01),7px11px13pxrgba(0,0,0,0.02),2px3px7pxrgba(0,0,0,0.02),0px0px0pxrgba(0,0,0,0.02)";
+  }
+
+  @media (max-width: 640px) {
+    article {
+      background: linear-gradient(
+        90deg,
+        rgba(2, 132, 199, 0.1) 0%,
+        rgba(236, 254, 255, 0) 66.89%
+      );
+    }
+  }
+
+  article::before {
+    --something: 2px !important;
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    padding: var(--something);
+    opacity: var(--something-opa);
+    background: linear-gradient(
+        135deg,
+        #0285c7aa 5%,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent
+      ),
+      linear-gradient(
+        300deg,
+        #0284c7 10%,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent
+      );
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    border-radius: inherit;
+    -webkit-mask:
+      linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  @media (max-width: 640px) {
+    article::before {
+      padding: 0;
+      padding-top: 2px !important;
+      background: linear-gradient(90deg, #0284c7 0%, #ffffff 66.89%);
+    }
+  }
+</style>

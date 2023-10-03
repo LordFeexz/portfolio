@@ -1,13 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/navbar";
-import Hero from "../app/hero/index.astro"
+import Hero from "../app/hero/index.astro";
+import Projects from "../app/projects/index.astro";
 ---
 
 <Layout title="Ananda Fiqri - Backend | Fullstack">
-  <Navbar />
+  <Navbar client:idle />
   <main>
-	<Hero />
+    <Hero />
+    <Projects />
   </main>
   <script>
     import {
