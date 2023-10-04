@@ -1,0 +1,174 @@
+---
+import { Image } from "astro:assets";
+import CheckList from "../icons/checklist.astro";
+import IndofundIcon from "../icons/indofundIcon.astro";
+
+const indofundStartDate = new Date("2023-01-01");
+const now = new Date();
+---
+
+<article
+  id="work-indofund"
+  style={{ transform: "perspective(75em) rotateX(18deg)" }}
+  class="relative z-10 mx-auto max-w-[1244px] overflow-hidden px-5 py-20 pb-40 sm:rounded-2xl sm:px-10 lg:px-[5.4rem]">
+  <Image
+    loading="lazy"
+    width={800}
+    height={800}
+    class="pointer-events-none absolute right-0 bottom-0 z-0"
+    src="/work-ournament-blue.png"
+    alt=""
+    format="webp"
+  />
+  <header class="z-10 flex flex-col items-start justify-between sm:flex-row">
+    <div class="flex items-center space-x-4 sm:space-x-6">
+      <div class="scale-90 sm:mt-1 sm:scale-100">
+        <IndofundIcon />
+      </div>
+      <div>
+        <h3
+          class="text-2xl font-semibold leading-100 text-cyan-50 sm:text-3xl md:text-[40px]">
+          Indofund
+        </h3>
+      </div>
+    </div>
+    <div class="role-label relative mt-5 rounded-2xl px-4 py-3 sm:mt-0">
+      <span class="font-bold text-cyan-50 sm:text-lg md:text-xl"
+        >Backend Developer</span
+      >
+    </div>
+  </header>
+
+  <div class="z-10 mt-20">
+    <h4 class="text-lg font-semibold sm:text-xl text-blue-300">
+      <span class="sr-only">Since:</span> Jan 2023 - Present · {
+        (now.getFullYear() - indofundStartDate.getFullYear()) * 12 +
+          (now.getMonth() - indofundStartDate.getMonth())
+      } months
+    </h4>
+    <p
+      class="mt-8 max-w-[570px] text-xl font-medium leading-140 text-blue-50 md:text-2xl">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, corporis?
+      Autem facere culpa suscipit mollitia dolore veritatis
+    </p>
+
+    <h4
+      class="mt-10 flex max-w-[200px] flex-col space-y-3 text-xl font-semibold text-blue-300 mob:max-w-none sm:mt-16 sm:flex-row sm:items-center sm:space-x-3 sm:space-y-0 md:text-2xl">
+      <CheckList />
+      <span>Responsibilities</span>
+    </h4>
+    <ul
+      class="mt-10 max-w-[774px] space-y-5 !leading-[180%] text-[#CCEEFF] mob:pl-4 sm:text-lg md:text-xl">
+      {
+        [
+          "Creating a customable authentication for each role to access an endpoint",
+          "Refactoring the code to avoid vulnerability to injections attack and xss attack",
+          "Integrating application to third party API",
+          "Creating unit-test for existing feature and incoming feature",
+          "Migrating to typescript",
+          "Initilizing docker-compose for dev environment",
+          "Reducing code complexity",
+          "Reducing line code up to 40%",
+        ].map((el) => <li>{el}</li>)
+      }
+    </ul>
+  </div>
+</article>
+
+<style>
+  article {
+    background: linear-gradient(
+        124.43deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0) 73.13%
+      ),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #091f2a;
+  }
+
+  ul li::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #cceeff;
+    margin-right: 0.5rem;
+    margin-bottom: 4px;
+  }
+
+  article::before {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        rgba(125, 211, 252, 0.3) 1%,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent
+      ),
+      linear-gradient(
+        300deg,
+        rgba(125, 211, 252, 0.5) 10%,
+        transparent,
+        transparent,
+        transparent
+      );
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    border-radius: inherit;
+    -webkit-mask:
+      linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  @media (max-width: 640px) {
+    article::before {
+      padding: 0;
+      padding-top: 2px;
+      background: linear-gradient(
+        90deg,
+        rgba(125, 211, 252, 0.5) 0%,
+        rgba(217, 217, 217, 0) 66.89%
+      );
+    }
+  }
+
+  .role-label::before {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: linear-gradient(
+      180deg,
+      rgba(12, 74, 110, 1),
+      rgba(12, 74, 110, 0.1)
+    );
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    border-radius: inherit;
+    -webkit-mask:
+      linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+</style>

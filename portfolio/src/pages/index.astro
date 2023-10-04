@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/navbar";
 import Hero from "../app/hero/index.astro";
 import Projects from "../app/projects/index.astro";
+import WorkExp from "../app/work-experience/index.astro";
 ---
 
 <Layout title="Ananda Fiqri - Backend | Fullstack">
@@ -10,6 +11,10 @@ import Projects from "../app/projects/index.astro";
   <main>
     <Hero />
     <Projects />
+
+    <div id="dark-section">
+      <WorkExp />
+    </div>
   </main>
   <script>
     import {
