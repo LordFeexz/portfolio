@@ -1,22 +1,24 @@
 ---
 import { Image } from "astro:assets";
-import HackparkIcon from "../icons/hackparkIcon.astro";
-import Mongo from "../icons/mongo.astro";
-import Pg from "../icons/pg.astro";
-import Graphql from "../icons/graphql.astro";
-import React from "../icons/react.astro";
-import Express from "../icons/express.astro";
+import ForumGamersIcon from "../icons/forumGamersIcon.astro";
 import Slider from "../slider.astro";
 import Github from "../icons/github.astro";
-import Heroku from "../icons/heroku.astro";
+import Mongo from "../icons/mongo.astro";
+import Pg from "../icons/pg.astro";
+import Cassandra from "../icons/cassandra.astro";
+import Elasticsearch from "../icons/elasticsearch.astro";
+import Graphql from "../icons/graphql.astro";
+import Nextjs from "../icons/nextjs.astro";
+import Express from "../icons/express.astro";
+import Golang from "../icons/golang.astro";
+import Rabbitmq from "../icons/rabbitmq.astro";
 import Redis from "../icons/redis.astro";
 ---
 
 <article
   style={{ transform: "perspective(75em) rotateX(18deg)" }}
-  id="project-hackpark"
+  id="project-forumGamers"
   class="relative z-10 mx-auto max-w-[1244px] overflow-hidden py-20 sm:rounded-3xl">
-  <!--  -->
   <Image
     format="webp"
     src="/project-ournament-lines.png"
@@ -29,7 +31,7 @@ import Redis from "../icons/redis.astro";
 
   <Image
     format="webp"
-    src="/project-ournament-lines-btm.png"
+    src="/project-ournament-lines-btm-red.png"
     loading="lazy"
     width="1000"
     height="1000"
@@ -38,47 +40,42 @@ import Redis from "../icons/redis.astro";
   />
 
   <div class="relative z-10 px-5 sm:px-10 lg:px-16">
-    <h3 class="sr-only">Hackpark</h3>
-    <HackparkIcon />
+    <h3 class="sr-only">Forum Gamers</h3>
+    <ForumGamersIcon />
     <h4 class="sr-only">About</h4>
+
     <p class="mt-10 text-lg !leading-150 text-dark sm:text-2xl">
-      <span class="font-semibold">Introducing</span> A solution for driver that
-      didn’t want hassling around with finding parking slot without any
-      certainty.
+      <span class="font-semibold"> Introducing</span> Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Vitae eius esse aliquam adipisci iusto sit
+      quia sed, asperiores nihil dolorem magni, est blanditiis impedit ducimus
+      enim quaerat voluptates. Temporibus, ut!
     </p>
   </div>
 
   <div class="portfolio-images">
     <Slider
-      name="hackpark"
-      images={[
-        { src: "/hackpark/HackPark.png", alt: "flow app" },
-        { src: "/hackpark/timeline.png", alt: "timeline" },
-        { src: "/hackpark/testing.png", alt: "testing" },
-        { src: "/hackpark/desc.png", alt: "description" },
-        { src: "/hackpark/challange.png", alt: "challange" },
-        { src: "/hackpark/success-story.png", alt: "success-story" },
-      ]}
+      name="forumGamers"
+      images={[{ src: "/forumGamers/figma-home.png", alt: "figma-home" }]}
     />
   </div>
 
   <div class="relative z-10 px-5 sm:px-10 lg:px-16">
     <p class="text-lg !leading-150 text-dark sm:text-2xl">
-      Hackpark will help you to book that parking slot and pay the parking fee
-      simply with scan <span class="font-semibold">QR Code</span>.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veniam
+      natus est pariatur. Sed culpa natus facere cupiditate porro voluptatem
+      consectetur praesentium, cum tempora ducimus! Animi ex id tenetur
+      sapiente.
     </p>
-    <br />
-    <br />
 
     <div class="flex items-start space-x-4 pl-5 sm:space-x-10 sm:pl-8">
       <a
         target="_blank"
-        class="font-semibold leading-6 tracking-tight"
-        href="https://github.com/LordFeexz/Hackpark">
+        href="https://github.com/forumGamers"
+        class="font-semibold leading-6 tracking-tight">
         <span
-          class="block text-xl leading-4 text-dark sm:text-[32px] sm:!leading-100"
-          >hackpark</span
-        >
+          class="block text-xl leading-4 text-dark sm:text-[32px] sm:!leading-100">
+          Forum Gamers
+        </span>
         <span
           class="inline-flex space-x-[6px] text-sm text-slate-700 sm:pt-2 sm:text-xl">
           <span>on</span>
@@ -97,11 +94,14 @@ import Redis from "../icons/redis.astro";
           [
             <Mongo />,
             <Pg />,
+            <Cassandra />,
+            <Elasticsearch />,
             <Graphql />,
-            <React />,
+            <Nextjs />,
             <Express />,
+            <Golang />,
+            <Rabbitmq />,
             <Redis />,
-            <Heroku />,
           ].map((icon) => (
             <div class="-ml-2 w-20 scale-[90%] sm:ml-0 sm:min-h-[100px] sm:min-w-[100px] sm:scale-100">
               {icon}
@@ -118,42 +118,44 @@ import Redis from "../icons/redis.astro";
 <style>
   article {
     background: linear-gradient(
-        146.63deg,
-        rgba(2, 132, 199, 0.1) 1.32%,
-        rgba(236, 254, 255, 0) 66%
+        142.21deg,
+        rgba(231, 80, 117, 0.1) -0.37%,
+        rgba(236, 254, 255, 0) 66.76%
       ),
       linear-gradient(
-        325.76deg,
-        rgba(2, 132, 199, 0.2) 3.68%,
-        rgba(236, 254, 255, 0) 66.89%
+        318.59deg,
+        rgba(232, 85, 121, 0.2) 3.78%,
+        rgba(236, 254, 255, 0) 47.39%
       ),
       #ffffff;
-    box-shadow: "15px24px17pxrgba(0,0,0,0.01),7px11px13pxrgba(0,0,0,0.02),2px3px7pxrgba(0,0,0,0.02),0px0px0pxrgba(0,0,0,0.02)";
+    box-shadow:
+      15px 24px 17px rgba(0, 0, 0, 0.01),
+      7px 11px 13px rgba(0, 0, 0, 0.02),
+      2px 3px 7px rgba(0, 0, 0, 0.02),
+      0px 0px 0px rgba(0, 0, 0, 0.02);
   }
 
   @media (max-width: 640px) {
     article {
       background: linear-gradient(
         90deg,
-        rgba(2, 132, 199, 0.1) 0%,
-        rgba(236, 254, 255, 0) 66.89%
+        rgba(231, 80, 117, 0.1) 0%,
+        #ffffff 66.89%
       );
     }
   }
 
   article::before {
-    --something: 2px !important;
     content: "";
     pointer-events: none;
     user-select: none;
     position: absolute;
     inset: 0px;
     border-radius: inherit;
-    padding: var(--something);
-    opacity: var(--something-opa);
+    padding: 2px;
     background: linear-gradient(
         135deg,
-        #0285c7aa 5%,
+        hsla(345, 76%, 62%, 0.4) 5%,
         transparent,
         transparent,
         transparent,
@@ -163,7 +165,7 @@ import Redis from "../icons/redis.astro";
       ),
       linear-gradient(
         300deg,
-        #0284c7 10%,
+        hsla(345, 76%, 62%, 0.8) 10%,
         transparent,
         transparent,
         transparent,
@@ -185,8 +187,12 @@ import Redis from "../icons/redis.astro";
   @media (max-width: 640px) {
     article::before {
       padding: 0;
-      padding-top: 2px !important;
-      background: linear-gradient(90deg, #0284c7 0%, #ffffff 66.89%);
+      padding-top: 2px;
+      background: linear-gradient(
+        90deg,
+        rgba(231, 80, 117, 0.8) 0%,
+        #ffffff 66.89%
+      );
     }
   }
 </style>
