@@ -1,17 +1,15 @@
 type ViewChangeHandler = (entry: IntersectionObserverEntry) => void;
 
+export interface InViewOptions {
+  root?: Element | Document;
+  rootMargin?: string;
+  amount?: "any" | "all" | number;
+}
+
 export default function inView(
   element: Element,
   onStart: (entry: IntersectionObserverEntry) => void | ViewChangeHandler,
-  {
-    root,
-    rootMargin,
-    amount = "any",
-  }: {
-    root?: Element | Document;
-    rootMargin?: string;
-    amount?: "any" | "all" | 0 | 1;
-  }
+  { root, rootMargin, amount = "any" }: InViewOptions = {}
 ) {
   if (typeof IntersectionObserver === "undefined") return () => {};
 

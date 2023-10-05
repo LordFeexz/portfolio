@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useHover } from "@uidotdev/usehooks";
 import { animate, spring, type AnimationOptionsWithOverrides } from "motion";
-import inView from "../utils/in-view";
+import view from "../utils/in-view";
 
 export default function useNavbar() {
   const theme = {
@@ -78,7 +78,7 @@ export default function useNavbar() {
       })
     }
 
-    inView(
+    view(
       document.querySelector("#header") as Element,
       () => {
         animate(
@@ -94,6 +94,35 @@ export default function useNavbar() {
       },
       { amount: "all" }
     );
+
+    view(document.querySelector('#projects') as Element,() => {
+      animate(nav as Element,{ backgroundColor:theme. defaultBackground, color:theme. textDarkColor, opacity: 1 },animateOption)
+    },)
+
+    view(document.querySelector('#project-hackpark') as Element,() => {
+      animate(nav as Element, { backgroundColor:theme. defaultBackground, color:theme. textDarkColor, opacity: 1 }, animateOption);
+      activated(navPointer as Element, document.querySelector('a[href="#projects"]'));
+    })
+
+    view(document.querySelector('#project-forumGamers') as Element,() => {
+      animate(nav as Element, { backgroundColor:theme. darkRedNavbarBackground, color:theme. textRedColor, opacity: 1 }, animateOption);
+      activated(navPointer as Element, document.querySelector('a[href="#projects"]'));
+    })
+
+    view(document.querySelector("#work-indofund") as Element, () => {
+      animate(nav as Element, { backgroundColor:theme. darkBlueNavbarBackground, color:theme. textLightColor, opacity: 1 }, animateOption);
+      activated(navPointer as Element, document.querySelector('a[href="#work-experiences"]'));
+    })
+
+    view(document.querySelector("#work-experiences") as Element, () => {
+      animate(nav as Element, { backgroundColor:theme. darkBlueNavbarBackground, color:theme. textLightColor, opacity: 1 }, animateOption);
+      activated(navPointer as Element, document.querySelector('a[href="#work-experiences"]'));
+    });
+
+    view(document.querySelector("#contact") as Element, () => {
+      animate(nav as Element, { opacity: 0 }, animateOption);
+      activated(navPointer as Element, document.querySelector('a[href="#contact"]'));
+    });
 
     nav?.querySelectorAll(".nav-item").forEach((tab: any) => {
       tab.onclick = () => {

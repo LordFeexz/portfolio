@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge";
 import { Transition, Popover } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
+import "./index.css";
 
 export default function Navbar() {
   const navigations = [
