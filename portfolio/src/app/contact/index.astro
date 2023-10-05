@@ -1,0 +1,196 @@
+---
+import { Image } from "astro:assets";
+import Gmail from "./icons/gmail.astro";
+import Instagram from "./icons/instagram.astro";
+import Footer from "./footer.astro";
+---
+
+<section
+  id="contact"
+  class="relative flex items-center overflow-hidden lg:max-h-screen lg:min-h-screen">
+  <Image
+    format="webp"
+    width={1100}
+    height={1100}
+    id="contact-bg"
+    src="/images/contact-bg.png"
+    alt=""
+    class="aspect-auto absolute bottom-0 -right-24 z-0 w-[800px] min-w-[800px] opacity-0 sm:right-0 sm:min-w-[1200px]"
+  />
+
+  <div
+    class="z-10 mx-auto h-full px-5 max-lg:py-20 max-lg:pb-36 mob:px-8 sm:px-10 md:px-16 lg:px-0 lg:pb-16 xl:max-w-[1244px] xl:px-4 xl:pb-10 2xl:pb-32">
+    <h2
+      id="contact-me"
+      class="text-3xl font-semibold !leading-140 tracking-tight opacity-0 md:font-bold 2xl:text-4xl">
+      <span class="no-text-fill-color mr-2 block sm:inline-block">🤝</span>Let's
+      Connect
+    </h2>
+
+    <div
+      class="body-content mt-12 text-5xl font-semibold tracking-tighter sm:text-6xl lg:text-[68px] xl:text-[84px] 2xl:mt-16 2xl:text-[92px]">
+      <p
+        class="contact-content-item mt-5 leading-[90%] lg:mt-2 xl:-mt-5 xl:leading-[120%] 2xl:-mt-4">
+        Feel free to reach out to me for any inquiries, collaborations, or just
+        to say hi!
+      </p>
+      <p
+        class="contact-content-item mt-5 pb-2 leading-[90%] lg:mt-2 xl:-mt-5 xl:pb-0 xl:leading-[120%] 2xl:-mt-4">
+        Ask something?
+      </p>
+    </div>
+
+    <!-- contact  -->
+    <div class="mt-20 2xl:mt-24">
+      <div
+        id="contact-profile"
+        class="flex flex-col items-start opacity-0 sm:flex-row sm:space-x-8">
+        <div
+          class="aspect-square relative inline-flex h-24 max-h-24 items-center justify-center rounded-full bg-cyan-dark sm:min-h-[32px] sm:min-w-[32px] md:h-28 xl:h-32 xl:max-h-32">
+          <Image
+            format="webp"
+            width={96 * 2}
+            src="/me.jpg"
+            alt="ananda-fiqri"
+            loading="lazy"
+            height={96 * 2}
+            class="h-24 max-h-24 w-24 max-w-[96px] rounded-full object-cover sm:h-32 sm:min-h-[32px] sm:w-32 sm:min-w-[32px] md:h-28 xl:h-32 xl:max-h-32 xl:max-w-[128px]"
+          />
+        </div>
+
+        <div class="mt-6 sm:mt-0">
+          <p class="text-xl font-medium text-[#38BDF8] xl:text-2xl">
+            Contact me
+          </p>
+
+          <div
+            class="mt-4 space-y-1 text-[#CFFAFE] sm:space-y-0 md:mt-6 lg:text-base xl:mt-8 xl:text-2xl">
+            <a
+              href="mailto:anandafiqri1403@gmail.com"
+              class="flex items-center space-x-3">
+              <div class="h-4 w-4">
+                <Gmail />
+              </div>
+              <span>anandafiqri1403@gmail.com</span>
+            </a>
+            <a
+              href="https://instagram.com/anandafiqri1403"
+              target="_blank"
+              class="flex items-center space-x-3">
+              <div class="h-4 w-4">
+                <Instagram />
+              </div>
+              <span>@anandafiqri1403</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </div>
+  </div>
+  <script>
+    import {
+      animate,
+      inView,
+    } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+
+    const defaultEasing = [0.17, 0.55, 0.55, 1];
+
+    document.querySelectorAll(".contact-content-item").forEach((item, i) => {
+      inView(item, (el) => {
+        animate(
+          item,
+          { opacity: 1, transform: "translateY(0)" },
+          { duration: 0.4, delay: 0.1 + i / 2, easing: defaultEasing }
+        );
+      });
+    });
+
+    inView("#contact-me", (el) => {
+      animate(
+        "#contact-bg",
+        { opacity: 1 },
+        { duration: 0.4, delay: 2.2, easing: defaultEasing }
+      );
+      animate(
+        "#contact-profile",
+        { opacity: 1 },
+        { duration: 0.4, delay: 1.7, easing: defaultEasing }
+      );
+      animate(
+        "#contact-me",
+        { opacity: 1 },
+        { duration: 0.4, delay: 2.2, easing: defaultEasing }
+      );
+      animate(
+        "#footer",
+        { opacity: 1 },
+        { duration: 0.4, delay: 2.2, easing: defaultEasing }
+      );
+    });
+  </script>
+</section>
+
+<style>
+  .contact-content-item {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  section {
+    background: linear-gradient(
+        115.24deg,
+        rgba(27, 69, 91, 0.2) -16.72%,
+        rgba(0, 0, 0, 0) 49.18%
+      ),
+      #040d11;
+  }
+
+  @media (max-height: 756px) {
+    section {
+      min-height: 1024px !important;
+    }
+  }
+
+  h2 {
+    background: linear-gradient(to bottom, #cffafe 0%, #075985);
+    background-clip: text;
+    text-fill-color: transparent;
+    line-height: 77px;
+    -webkit-box-decoration-break: clone;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    color: unset;
+  }
+
+  .body-content {
+    line-height: 77px;
+    color: #bae1f7;
+  }
+
+  section::before {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    padding-top: 3px;
+    background: linear-gradient(
+      90deg,
+      #67e8f9 0%,
+      rgba(217, 217, 217, 0) 66.89%
+    );
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    border-radius: inherit;
+    -webkit-mask:
+      linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+</style>
