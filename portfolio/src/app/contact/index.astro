@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Gmail from "./icons/gmail.astro";
 import Instagram from "./icons/instagram.astro";
 import Footer from "./footer.astro";
+import ButtonDownload from "../../components/button/buttonDownload";
 ---
 
 <section
@@ -82,6 +83,7 @@ import Footer from "./footer.astro";
               </div>
               <span>@anandafiqri1403</span>
             </a>
+            <ButtonDownload client:visible />
           </div>
         </div>
       </div>
@@ -98,7 +100,7 @@ import Footer from "./footer.astro";
     const defaultEasing = [0.17, 0.55, 0.55, 1];
 
     document.querySelectorAll(".contact-content-item").forEach((item, i) => {
-      inView(item, (el) => {
+      inView(item, () => {
         animate(
           item,
           { opacity: 1, transform: "translateY(0)" },
@@ -107,7 +109,7 @@ import Footer from "./footer.astro";
       });
     });
 
-    inView("#contact-me", (el) => {
+    inView("#contact-me", () => {
       animate(
         "#contact-bg",
         { opacity: 1 },

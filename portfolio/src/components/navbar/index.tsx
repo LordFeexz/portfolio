@@ -83,7 +83,7 @@ export default function Navbar() {
                 <div>
                   <img
                     className="h-12 w-auto rounded-full"
-                    src="/images/"
+                    src="/me2.jpg"
                     alt="poto-profile"
                   />
                 </div>
